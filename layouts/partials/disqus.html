@@ -1,18 +1,6 @@
-{{ partial "head.html" . }}
-<div class="content container">
-  <div class="post">
-    <h1>{{ .Title }}</h1>
-    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }} &middot; {{ .ReadingTime }} minute read{{ if .Site.DisqusShortname }} &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
-    {{ if isset .Params "categories" }}
-    <br/>
-    {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-    {{ end }}</span>
-    {{ .Content }}
-  </div>
-  {{ if .Site.DisqusShortname }}<div id="disqus_thread"></div>{{ end }}
-</div>
+{{ if ne .Site.Params.disqusShortname "" }}<div class="content container" id="disqus_thread"></div>{{ end }}
 
-{{ with .Site.DisqusShortname }}
+{{ with .Site.Params.disqusShortname }}
 <script type="text/javascript">
 var disqus_shortname = {{ . }};
 (function () {
@@ -24,7 +12,7 @@ var disqus_shortname = {{ . }};
 </script>
 {{ end }}
 
-{{ with .Site.DisqusShortname }}
+{{ with .Site.Params.disqusShortname }}
 <script type="text/javascript">
     var disqus_shortname = {{ . }};
     (function() {
@@ -36,4 +24,3 @@ var disqus_shortname = {{ . }};
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 {{ end }}
-{{ partial "foot.html" . }}

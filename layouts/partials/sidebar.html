@@ -1,10 +1,17 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      {{ with .Site.Params.gravatarHash }}<img src="https://www.gravatar.com/avatar/{{ . }}?s=200" alt="gravatar">{{ end }}
-      <h1>{{ .Site.Author.name }}</h1>
-      {{ with .Site.Params.tagline }}<p class="lead">{{ . | markdownify }}</p>{{ end }}
+
+    <div class="sidebar-title">
+      <h1><a href="{{ "/" | absURL }}">{{ .Site.Title }}</a></h1>
+      {{ if ne .Site.Params.tagline "" }}<p class="lead">{{ .Site.Params.tagline | markdownify }}</p>{{ end }}
     </div>
+
+    {{ if .Site.Author.sidebarDisplay }}
+    <div class="sidebar-about">
+      <h2>{{ .Site.Author.name }}</h1>
+      {{ if ne .Site.Author.gravatarHash "" }}<img src="https://www.gravatar.com/avatar/{{ . }}?s=200" alt="gravatar">{{ end }}
+    </div>
+    {{ end }}
 
     <ul class="sidebar-nav">
       <li class="sidebar-nav-item"><a href="{{ "/" | absURL }}">{{ if isset .Site.Params "home"}}{{ .Site.Params.home }}{{ else }}Blog{{ end }}</a></li>
@@ -26,7 +33,7 @@
       </li>
     </ul>
 
-    {{ if isset .Site.Params "flattr" }}
+    {{ if ne .Site.Params.flattr "" }}
     <p><script id='flattr'>
       (function(id){
         var s = document.getElementById(id);
@@ -41,7 +48,9 @@
     </script></p>
     {{ end }}
 
-    <p>Copyright &copy; {{ .Now.Format "2006" }} <a href="{{ "/license/" | absURL }}">License</a><br/>
-       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+    {{ if .Site.Author.copyrightDisplay }}
+    <p>Copyright &copy; {{ .Now.Format "2006" }} {{ .Site.Author.name }}</p>
+    {{ end }}
+
   </div>
 </div>

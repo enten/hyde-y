@@ -2,12 +2,8 @@
 <div class="content container">
   <ul class="posts">
   {{ range .Data.Pages }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ if isset .Params "categories" }}
-    &middot;
-    {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-    {{ end }}</span>
-    &middot; <time>{{ .Date.Format "Jan 2, 2006" }}</time></li>
+    <li><a href="{{ .Permalink }}" class="big">{{ .Title }}</a>
+    {{ partial "post/meta.html" . }}
   {{ end }}
   </ul>
 </div>

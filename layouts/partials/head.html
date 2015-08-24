@@ -7,14 +7,16 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
+  <title>{{ .Title }}</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ "/css/poole.css" | absURL }}">
   <link rel="stylesheet" href="{{ "/css/hyde.css" | absURL }}">
+  <link rel="stylesheet" href="{{ "/css/hyde-x.css" | absURL }}">
   <link rel="stylesheet" href="{{ "/css/poole-overrides.css" | absURL }}">
   <link rel="stylesheet" href="{{ "/css/hyde-overrides.css" | absURL }}">
-  <link rel="stylesheet" href="{{ "/css/hyde-x.css" | absURL }}">
+  <link rel="stylesheet" href="{{ "/css/hyde-x-overrides.css" | absURL }}">
+
   {{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">{{ end }}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">

@@ -1,0 +1,16 @@
+/*
+ * Tweaks and overrides to hyde-x.css
+ */
+
+ .sidebar-about img {
+  width: 100px;
+  height: 100px;
+ }
+
+.label {
+  margin-left: 0;
+}
+
+.big {
+  font-size: 150%;
+}

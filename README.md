@@ -1,5 +1,7 @@
-Hyde-X
+Hyde-Y
 ======
+
+<small>Forked from [Hyde-X](https://github.com/zyro/hyde-x)</small>
 
 Enhanced port of the Jekyll "[Hyde](https://github.com/poole/hyde)" theme to the [Hugo](http://gohugo.io) site generator. Check below for a list of enhancements.
 
@@ -21,7 +23,7 @@ You can find a live site using this theme [here](http://andreimihu.com) and the 
 $ cd your_site_repo/
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/zyro/hyde-x
+$ git clone https://github.com/enten/hyde-y
 ```
 
 See the [official Hugo themes documentation](http://gohugo.io/themes/installing) for more info.
@@ -39,7 +41,7 @@ This theme expects a relatively standard Hugo blog/personal site layout:
     └── other_page.md
 ```
 
-Just run `hugo --theme=hyde-x` to generate your site!
+Just run `hugo --theme=hyde-y` to generate your site!
 
 ### Configuration
 
@@ -47,12 +49,12 @@ An example of what your site's `config.toml` could look like. All theme-specific
 
 ``` toml
 baseurl = "http://example.com/"
-title = "Your site title"
+title = "Site title"
 languageCode = "en-us"
 disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
 MetaDataFormat = "toml"
-theme = "hyde-x"
-paginate = 10
+theme = "hyde-y"
+paginate = 5
 
 [author]
     name = "Your Name"
@@ -60,11 +62,12 @@ paginate = 10
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
     # The format shown here is the same one Jekyll/Octopress uses by default.
-    post = "/blog/:year/:month/:day/:title/"
+    post = "/blog/:year/:month/:day/:slug/"
 
 [taxonomies]
     # Optional. Use if you want tags and lists.
     category = "categories"
+    tag = "tags"
 
 #
 # All parameters below here are optional and can be mixed and matched.
@@ -117,13 +120,13 @@ paginate = 10
 
 ### Built-in colour themes
 
-Hyde-X provides 8 built-in colour themes by default, with the option to define more in your own custom CSS.
+Hyde-Y provides 8 built-in colour themes by default, with the option to define more in your own custom CSS.
 
-![Hyde-X theme classes](https://github.com/zyro/hyde-x/blob/master/images/theme-colours.png)
+![Hyde-Y theme classes](https://github.com/enten/hyde-y/blob/master/images/theme-colours.png)
 
 ### Tips
 
-* If you've added `theme = "hyde-x"` to your `config.toml`, you don't need to keep using the `--theme=hyde-x` flag!
+* If you've added `theme = "hyde-y"` to your `config.toml`, you don't need to keep using the `--theme=hyde-y` flag!
 * Pages where you specify `menu = "main"` in the front matter will be linked in the sidebar just below the `Blog` link.
 * Use the exact permalink format above to maintain old links if migrating from Jekyll/Octopress.
 * Although all of the syntax highlight CSS files under the theme's `static/css/highlight` are bundled with the site, only the one you choose will be included in the page and delivered to the browser.
@@ -152,8 +155,8 @@ Obviously largely a port of the awesome [Hyde](https://github.com/poole/hyde) th
 
 ### Questions, ideas, bugs, pull requests?
 
-All feedback is welcome! Head over to the [issue tracker](https://github.com/zyro/hyde-x/issues).
+All feedback is welcome! Head over to the [issue tracker](https://github.com/enten/hyde-y/issues).
 
 ### License
 
-Open sourced under the [MIT license](https://github.com/zyro/hyde-x/blob/master/LICENSE).
+Open sourced under the [MIT license](https://github.com/enten/hyde-y/blob/master/LICENSE).
