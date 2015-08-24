@@ -48,16 +48,68 @@ Just run `hugo --theme=hyde-y` to generate your site!
 An example of what your site's `config.toml` could look like. All theme-specific parameters are under `[params]` and standard Hugo parameters are used where possible.
 
 ``` toml
-baseurl = "http://example.com/"
-title = "Site title"
-languageCode = "en-us"
-disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
-MetaDataFormat = "toml"
-theme = "hyde-y"
-paginate = 5
+# config file (default is path/config.yaml|json|toml)
+config = "config.toml"
 
-[author]
-    name = "Your Name"
+# Site title
+title = "Site title"
+
+# theme to use (located in /themes/THEMENAME/)
+theme = "hyde-y"
+
+# URLs
+baseurl = "http://example.com/" # hostname (and path) to the root eg. http://spf13.com/
+canonifyurls = false
+relativeurls = false # enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+uglyURLs = false # if true, use /filename.html instead of /filename/
+
+# main directories
+archetypedir = "archetype"
+contentdir = "content"
+dataDir = "data"
+layoutdir = "layouts"
+publishdir = "public"
+staticdir = "static"
+
+# building
+buildDrafts = false # include content marked as draft
+buildFuture = false # include content with publishdate in the future
+defaultExtension = "html"
+defaultLayout = "post"
+destination = "" # filesystem path to write files to
+disableLiveReload = false
+disableRss = false # Do not build RSS files
+disableSitemap = false # Do not build Sitemap file
+footnoteAnchorPrefix = ""
+footnoteReturnLinkContents = ""
+languageCode = ""
+metaDataFormat = "toml" # "yaml", "toml", "json"
+noTimes = false # Don't sync modification time of files
+paginate = 5
+paginatePath = "page"
+pluralizeListTitles = true # Pluralize titles in lists using inflect
+pygmentsStyle = "monokai" # color-codes for highlighting derived from this style
+pygmentsUseClasses = false # true: use pygments-css or false: color-codes directly
+sitemap = ""
+source = "" # filesystem path to read files relative from
+watch = true # watch filesystem for changes and recreate as needed
+
+# logging
+verbose = false # verbose output
+log = false # Enable Logging
+logFile = "" # Log File path (if set, logging enabled automatically)
+stepAnalysis = false # display memory and timing of different steps of the program
+verboseLog = false # verbose logging
+
+# editor
+editor = "" # edit new content with this editor, if provided
+newContentEditor = ""
+
+[blackfriday]
+    angledQuotes = true
+    fractions = false
+    plainIdAnchors = true
+    extensions = ["hardLineBreak"]
 
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
@@ -69,40 +121,52 @@ paginate = 5
     category = "categories"
     tag = "tags"
 
+[author]
+    name = "Your Name"
+    email = "yourname@example.com"
+    gravatarHash = "" # MD5 hash of your Gravatar email address
+    sidebarDisplay = false
+    copyrightDisplay = true
+
 #
 # All parameters below here are optional and can be mixed and matched.
 #
 [params]
-    # If false display full article contents in blog index.
-    # Otherwise show description and 'read on' link to individual blog post page.
-    # Default (if omitted) is true.
-    truncate = true
-
-    # Used when a given page doesn't set its own.
-    defaultDescription = "Your default page description"
-    defaultKeywords = "your,default,page,keywords"
-
     # Changes sidebar background and link/accent colours.
     # See below for more colour options.
     # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
-    theme = "theme-base-08"
+    theme = "theme-base-00"
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
     highlight = "sunburst"
 
-    # Displays under the author name in the sidebar, keep it short.
-    # You can use markdown here.
-    tagline = "Your favourite quote or soundbite."
-
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Blog".
     home = "Blog"
 
+    # Displays under the author name in the sidebar, keep it short.
+    # You can use markdown here.
+    tagline = "Short description about your site."
+
+    # Used when a given page doesn't set its own.
+    defaultDescription = "Your default page description"
+    defaultKeywords = "your,default,page,keywords"
+
+    # If false display full article contents in blog index.
+    # Otherwise show description and 'read on' link to individual blog post page.
+    # Default (if omitted) is true.
+    truncate = true
+
+    # If true display table of contents in pages
+    toc = false
+
+    # Optional, enable Disqus integration
+    disqusShortname = "your_disqus_shortname"
+
     # Metadata used to drive integrations.
     googleAuthorship = "Your Google+ profile ID"
     googleAnalytics = "Your Google Analytics tracking code"
-    gravatarHash = "MD5 hash of your Gravatar email address"
 
     # Sidebar social links, these must be full URLs.
     github = ""
@@ -114,7 +178,7 @@ paginate = 5
     youtube = ""
 
     # Other social-like sidebar links
-    rss = false  # switch to true to enable RSS icon link
+    rss = true  # switch to true to enable RSS icon link
     flattr = ""  # populate with your flattr uid
 ```
 
