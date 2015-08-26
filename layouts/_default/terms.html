@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+<section class="content container">
+  <h1>{{ .Title }}</h1>
+  <ul class="posts">
+    {{ $baseurl := .Site.BaseURL }}
+    {{ $data := .Data }}
+    {{ range $key,$value := .Data.Terms.ByCount }}
+    <li><h2><a href="{{ $baseurl }}{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </h2></li>
+    {{ end }}
+  </ul>
+</section>
+{{ partial "footer.html" . }}

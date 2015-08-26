@@ -48,90 +48,58 @@ Just run `hugo --theme=hyde-y` to generate your site!
 An example of what your site's `config.toml` could look like. All theme-specific parameters are under `[params]` and standard Hugo parameters are used where possible.
 
 ``` toml
-# config file (default is path/config.yaml|json|toml)
-config = "config.toml"
+# hostname (and path) to the root eg. http://spf13.com/
+baseurl = "http://enten.fr/test3/"
 
 # Site title
-title = "Site title"
+title = "enten.fr"
+
+# Language
+languageCode = ""
 
 # theme to use (located in /themes/THEMENAME/)
 theme = "hyde-y"
 
-# URLs
-baseurl = "http://example.com/" # hostname (and path) to the root eg. http://spf13.com/
-canonifyurls = false
-relativeurls = false # enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
-uglyURLs = false # if true, use /filename.html instead of /filename/
-
-# main directories
-archetypedir = "archetype"
-contentdir = "content"
-dataDir = "data"
-layoutdir = "layouts"
-publishdir = "public"
-staticdir = "static"
-
-# building
-buildDrafts = false # include content marked as draft
-buildFuture = false # include content with publishdate in the future
-defaultExtension = "html"
-defaultLayout = "post"
-destination = "" # filesystem path to write files to
-disableLiveReload = false
-disableRss = false # Do not build RSS files
-disableSitemap = false # Do not build Sitemap file
-footnoteAnchorPrefix = ""
-footnoteReturnLinkContents = ""
-languageCode = ""
-metaDataFormat = "toml" # "yaml", "toml", "json"
-noTimes = false # Don't sync modification time of files
+# pagination
 paginate = 5
 paginatePath = "page"
-pluralizeListTitles = true # Pluralize titles in lists using inflect
-pygmentsStyle = "monokai" # color-codes for highlighting derived from this style
-pygmentsUseClasses = false # true: use pygments-css or false: color-codes directly
-sitemap = ""
-source = "" # filesystem path to read files relative from
-watch = true # watch filesystem for changes and recreate as needed
-
-# logging
-verbose = false # verbose output
-log = false # Enable Logging
-logFile = "" # Log File path (if set, logging enabled automatically)
-stepAnalysis = false # display memory and timing of different steps of the program
-verboseLog = false # verbose logging
-
-# editor
-editor = "" # edit new content with this editor, if provided
-newContentEditor = ""
-
-[blackfriday]
-    angledQuotes = true
-    fractions = false
-    plainIdAnchors = true
-    extensions = ["hardLineBreak"]
 
 [permalinks]
-    # Optional. Change the permalink format for the 'post' content type.
-    # The format shown here is the same one Jekyll/Octopress uses by default.
-    post = "/blog/:year/:month/:day/:slug/"
+    post = "/:year/:month/:day/:slug/"
 
 [taxonomies]
-    # Optional. Use if you want tags and lists.
-    category = "categories"
     tag = "tags"
+    topic = "topics"
 
 [author]
-    name = "Your Name"
-    email = "yourname@example.com"
+    name = "Steven Enten"
+    email = "steven@enten.fr"
     gravatarHash = "" # MD5 hash of your Gravatar email address
     sidebarDisplay = false
     copyrightDisplay = true
+
+[[menu.main]]
+    name = "Posts"
+    identifier = "posts"
+    url = "/post/"
+
+[[menu.main]]
+    name = "Tags"
+    identifier = "tags"
+    url = "/tags/"
 
 #
 # All parameters below here are optional and can be mixed and matched.
 #
 [params]
+    # Displays under the author name in the sidebar, keep it short.
+    # You can use markdown here.
+    tagline = "Ingénieur en R&amp;D informatique"
+
+    # Text for the top menu link, which goes the root URL for the site.
+    # Default (if omitted) is "Home".
+    home = "Home"
+
     # Changes sidebar background and link/accent colours.
     # See below for more colour options.
     # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
@@ -141,45 +109,30 @@ newContentEditor = ""
     # Check the static/css/highlight directory for options.
     highlight = "sunburst"
 
-    # Text for the top menu link, which goes the root URL for the site.
-    # Default (if omitted) is "Blog".
-    home = "Blog"
+    # Enable Disqus integration
+    disqusShortname = "enten"
 
-    # Displays under the author name in the sidebar, keep it short.
-    # You can use markdown here.
-    tagline = "Short description about your site."
-
-    # Used when a given page doesn't set its own.
-    defaultDescription = "Your default page description"
-    defaultKeywords = "your,default,page,keywords"
-
-    # If false display full article contents in blog index.
-    # Otherwise show description and 'read on' link to individual blog post page.
-    # Default (if omitted) is true.
-    truncate = true
-
-    # If true display table of contents in pages
-    toc = false
-
-    # Optional, enable Disqus integration
-    disqusShortname = "your_disqus_shortname"
-
-    # Metadata used to drive integrations.
-    googleAuthorship = "Your Google+ profile ID"
+    # Google Analytics.
     googleAnalytics = "Your Google Analytics tracking code"
 
-    # Sidebar social links, these must be full URLs.
-    github = ""
-    bitbucket = ""
-    linkedin = ""
-    googleplus = ""
-    facebook = ""
-    twitter = ""
-    youtube = ""
-
-    # Other social-like sidebar links
-    rss = true  # switch to true to enable RSS icon link
+    # Sidebar social links.
+    github = "enten" # Your Github profile ID
+    bitbucket = "" # Your Bitbucket profile ID
+    linkedin = "" # Your LinkedIn profile ID (from public URL)
+    googleplus = "" # Your Google+ profile ID
+    facebook = "" # Your Facebook profile ID
+    twitter = "" # Your Twitter profile ID
+    youtube = ""  # Your Youtube channel ID
     flattr = ""  # populate with your flattr uid
+    rss = true  # switch to true to enable RSS icon link
+
+
+[blackfriday]
+    angledQuotes = true
+    fractions = false
+    plainIdAnchors = true
+    extensions = ["hardLineBreak"]
+
 ```
 
 ### Built-in colour themes
@@ -197,7 +150,6 @@ Hyde-Y provides 8 built-in colour themes by default, with the option to define m
 * Change the favicon by providing your own as `static/favicon.png` in your site directory.
 * Hugo makes it easy to override theme layout and behaviour, read about it [here](http://gohugo.io/themes/customizing).
 * Pagination is set to 10 items by default, change it by updating `paginate = 10` in your `config.toml`.
-* Set `truncate = false` in the `[params]` section of your `config.toml` to display full blog post contents in the index page, like the [base Hyde theme](https://github.com/poole/hyde) did.
 
 ### Changes and enhancements from the original theme
 

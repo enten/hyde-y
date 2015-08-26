@@ -1,16 +1,87 @@
 /*
  * Tweaks and overrides to hyde-x.css
  */
-
- .sidebar-about img {
-  width: 100px;
-  height: 100px;
+ html {
+   font-family: "Raleway",sans-serif;
  }
 
-.label {
-  margin-left: 0;
+.sidebar-copyright, .post-date, .post table {
+  font-family: "PT Sans",Helvetica,Arial,sans-serif;
 }
 
-.big {
-  font-size: 150%;
+@media (min-width: 48em) {
+   .sidebar-sticky {
+     position: absolute;
+     right:  1rem;
+     top:    1rem;
+     bottom: none;
+     left:   1rem;
+   }
+ }
+
+.sidebar-about .avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.sidebar-copyright {
+  font-size: 0.7em;
+}
+
+.content ul.posts {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.content ul.posts li {
+    margin-bottom: 0;
+}
+
+.post-metas {
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
+
+.post-date {
+  margin-bottom: 0;
+}
+
+.post-tafs .label {
+  margin: 0;
+}
+
+.post-readlink {
+  text-align: right;
+}
+
+.post-nav {
+  margin-top: 30px;
+  font-size: 0.9em;
+}
+.post-nav .prev, .post-nav .next {
+  width: 50%;
+}
+.post-nav .prev {
+  text-align: left;
+}
+.post-nav .next {
+  float: right;
+  text-align: right;
+}
+
+.pagination {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.theme-base-08 a.label, .theme-base-08 .pagination > .active > a,
+.theme-base-09 a.label, .theme-base-09 .pagination > .active > a,
+.theme-base-0a a.label, .theme-base-0a .pagination > .active > a,
+.theme-base-0b a.label, .theme-base-0b .pagination > .active > a,
+.theme-base-0c a.label, .theme-base-0c .pagination > .active > a,
+.theme-base-0d a.label, .theme-base-0d .pagination > .active > a,
+.theme-base-0e a.label, .theme-base-0e .pagination > .active > a,
+.theme-base-0f a.label, .theme-base-0f .pagination > .active > a {
+  text-decoration: none;
+  color: #fff;
 }

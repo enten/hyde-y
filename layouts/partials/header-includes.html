@@ -1,0 +1,16 @@
+{{ "<!--[if lt IE 9]>" | safeHTML }}
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+{{ "<![endif]-->" | safeHTML }}
+
+<link rel="stylesheet" href="{{ "/css/poole.css" | absURL }}">
+<link rel="stylesheet" href="{{ "/css/hyde.css" | absURL }}">
+<link rel="stylesheet" href="{{ "/css/hyde-x.css" | absURL }}">
+<link rel="stylesheet" href="{{ "/css/poole-overrides.css" | absURL }}">
+<link rel="stylesheet" href="{{ "/css/hyde-overrides.css" | absURL }}">
+<link rel="stylesheet" href="{{ "/css/hyde-x-overrides.css" | absURL }}">
+
+{{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">{{ end }}
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,300">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">

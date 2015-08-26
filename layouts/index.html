@@ -1,25 +1,9 @@
-{{ partial "head.html" . }}
-<div class="content container">
-  <div class="posts">
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
-    {{ range $paginator.Pages }}
-    <div class="post">
-      <h1 class="post-title">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </h1>
-      {{ partial "post/meta.html" . }}
-      {{ if eq .Site.Params.truncate false }}
-      {{ .Content }}
-      {{ else if .Description }}
-      <p>{{ .Description }}</p>
-      <a href="{{ .Permalink }}">Read On &rarr;</a>
-      {{ else }}
-      {{ .Summary }}
-      {{ if .Truncated }}<a href="{{ .Permalink }}">Read On &rarr;</a>{{ end }}
-      {{ end }}
-    </div>
-    {{ end }}
-    {{ template "_internal/pagination.html" . }}
-  </div>
-</div>
-{{ partial "foot.html" . }}
+{{ partial "header.html" . }}
+<section class="content container">
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+  {{ range $paginator.Pages }}
+  {{ .Render "summary" }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+</section>
+{{ partial "footer.html" . }}

@@ -1,0 +1,10 @@
+<div class="post-metas">
+  <div class="post-date">
+    {{ .Date.Format "2 Jan, 2006" }}
+    &middot; Read in about {{ .ReadingTime }} Min ({{ .FuzzyWordCount }} Words)
+    {{ if .Site.Params.disqusShortname }}&middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a>{{ end }}
+  </div>
+  {{ if .Params.tags }}
+  <div class="post-tags">{{ range .Params.tags }}<a class="label" href="{{ "/tags/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}</div>
+  {{ end }}
+</div>

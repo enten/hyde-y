@@ -2,7 +2,7 @@
 <section class="content container">
   <h1>{{ .Title }}</h1>
   <ul class="posts">
-  {{ range $index, .Paginator.Pages }}
+  {{ range $index, $page := .Paginator.Pages }}
   {{ .Render "li" }}
   {{ end }}
   </ul>

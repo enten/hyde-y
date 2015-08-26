@@ -1,0 +1,16 @@
+<article class="post">
+  <header>
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ partial "post-metas.html" . }}
+  </header>
+  <p>
+    {{ if .Description }}
+    {{ .Description }}
+    {{ else }}
+    {{ .Summary }}
+    {{ end }}
+  </p>
+  <footer class="post-readlink">
+    <a href="{{ .Permalink }}">Read more &rarr;</a>
+  </footer>
+</article>

@@ -1,10 +1,11 @@
-{{ partial "head.html" . }}
-<div class="content container">
+{{ partial "header.html" . }}
+<section class="content container">
   <div class="post">
     <h1>{{ .Title }}</h1>
-    {{ partial "post/meta.html" . }}
-    {{ .Content }}
+    <article>
+      {{ .Content }}
+    </article>
+    {{ partial "comments.html" . }}
   </div>
-</div>
-{{ partial "disqus.html" . }}
-{{ partial "foot.html" . }}
+</section>
+{{ partial "footer.html" . }}

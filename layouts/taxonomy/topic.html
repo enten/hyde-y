@@ -2,10 +2,9 @@
 <section class="content container">
   <h1>{{ .Title }}</h1>
   <ul class="posts">
-  {{ range $index, .Paginator.Pages }}
-  {{ .Render "li" }}
+  {{ range $index, $page := .Paginator.Pages }}
+  {{ .Render "summary" }}
   {{ end }}
   </ul>
-  {{ partial "pagination.html" . }}
 </section>
 {{ partial "footer.html" . }}
