@@ -130,8 +130,11 @@ paginatePath = "page"
 [blackfriday]
     angledQuotes = true
     fractions = false
+    hrefTargetBlank = false
+    latexDashes = true
     plainIdAnchors = true
-    extensions = ["hardLineBreak"]
+    extensions = []
+    extensionmask = []
 
 ```
 
