@@ -126,7 +126,6 @@ paginatePath = "page"
     flattr = ""  # populate with your flattr uid
     rss = true  # switch to true to enable RSS icon link
 
-
 [blackfriday]
     angledQuotes = true
     fractions = false
@@ -138,6 +137,26 @@ paginatePath = "page"
 
 ```
 
+## Menu
+
+Create `data/Menu.toml` to configure the sidebar navigation menu. Example below.
+
+```toml
+[about]
+    Name = "About"
+    URL = "/about"
+
+[posts]
+    Name = "Posts"
+    Title = "Show list of posts"
+    URL = "/post"
+
+[tags]
+    Name = "Tags"
+    Title = "Show list of tags"
+    URL = "/tags"
+```
+
 ### Built-in colour themes
 
 Hyde-Y provides 8 built-in colour themes by default, with the option to define more in your own custom CSS.
@@ -147,8 +166,6 @@ Hyde-Y provides 8 built-in colour themes by default, with the option to define m
 ### Tips
 
 * If you've added `theme = "hyde-y"` to your `config.toml`, you don't need to keep using the `--theme=hyde-y` flag!
-* Pages where you specify `menu = "main"` in the front matter will be linked in the sidebar just below the `Blog` link.
-* Use the exact permalink format above to maintain old links if migrating from Jekyll/Octopress.
 * Although all of the syntax highlight CSS files under the theme's `static/css/highlight` are bundled with the site, only the one you choose will be included in the page and delivered to the browser.
 * Change the favicon by providing your own as `static/favicon.png` in your site directory.
 * Hugo makes it easy to override theme layout and behaviour, read about it [here](http://gohugo.io/themes/customizing).

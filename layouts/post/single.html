@@ -1,19 +1,12 @@
 {{ partial "header.html" . }}
 <section class="content container">
   <div class="post">
-    <h1>{{ .Title }}</h1>
+    <h1>{{ if .Draft }}DRAFT :: {{ end }}{{ .Title }}</h1>
     {{ partial "post-metas.html" . }}
     <article>
       {{ .Content }}
     </article>
-    <aside class="post-nav">
-      <section class="next">
-        &nbsp;{{ if .NextInSection }}<a class="next" href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">Next &rarr;</a>{{end}}
-      </section>
-      <section class="prev">
-        &nbsp;{{ if .PrevInSection }}<a class="previous" href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">&larr; Previous</a><br>{{end}}
-      </section>
-    <aside>
+    {{ partial "post-nav.html" . }}
     {{ partial "comments.html" . }}
   </div>
 </section>

@@ -16,7 +16,13 @@
     <nav id="nav">
       <ul id="main-nav" class="sidebar-nav">
         <li class="sidebar-nav-item"><a href="{{ .Site.BaseURL }}">{{ if and (isset .Site.Params "home" ) ( ne .Site.Params.home "" ) }}{{ .Site.Params.home }}{{ else }}Home{{ end }}</a></li>
-        {{ partial "navigation" . }}
+        {{ range .Site.Data.Menu }}
+        <li class="sidebar-nav-item">
+          <a href="{{ .URL | absURL }}"{{ if and ( isset . "Title" ) ( ne .Title "" ) }} title="{{ .Title }}"{{ end }}>
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
       </ul>
       <ul id="social-nav" class="sidebar-nav">
         <li class="sidebar-nav-item">

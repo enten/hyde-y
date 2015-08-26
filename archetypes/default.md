@@ -1,12 +1,9 @@
 ---
 type: "post"
 draft: true
-date:
-author:
-title:
-description:
-keywords:
-topics:
-tags: 
+author: "author"
+description: "description"
+keywords: ["key", "words"]
+topics: ["topic 1"]
+tags: ["one", "two"]
 ---
-
