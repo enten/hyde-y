@@ -49,13 +49,13 @@ An example of what your site's `config.toml` could look like. All theme-specific
 
 ``` toml
 # hostname (and path) to the root eg. http://spf13.com/
-baseurl = "http://enten.fr/test3/"
+baseurl = "http://www.example.com"
 
 # Site title
-title = "enten.fr"
+title = "Your site"
 
 # Language
-languageCode = ""
+languageCode = "en-EN"
 
 # theme to use (located in /themes/THEMENAME/)
 theme = "hyde-y"
@@ -72,8 +72,8 @@ paginatePath = "page"
     topic = "topics"
 
 [author]
-    name = "Steven Enten"
-    email = "steven@enten.fr"
+    name = "Your Name"
+    email = "yourname@example.com"
     gravatarHash = "" # MD5 hash of your Gravatar email address
     sidebarDisplay = false
     copyrightDisplay = true
@@ -94,7 +94,7 @@ paginatePath = "page"
 [params]
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
-    tagline = "Ingénieur en R&amp;D informatique"
+    tagline = "Short description about your site"
 
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
@@ -110,13 +110,13 @@ paginatePath = "page"
     highlight = "sunburst"
 
     # Enable Disqus integration
-    disqusShortname = "enten"
+    disqusShortname = "your_disqus_shortname"
 
     # Google Analytics.
     googleAnalytics = "Your Google Analytics tracking code"
 
     # Sidebar social links.
-    github = "enten" # Your Github profile ID
+    github = "" # Your Github profile ID
     bitbucket = "" # Your Bitbucket profile ID
     linkedin = "" # Your LinkedIn profile ID (from public URL)
     googleplus = "" # Your Google+ profile ID
