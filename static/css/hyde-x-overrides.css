@@ -85,3 +85,35 @@
   text-decoration: none;
   color: #fff;
 }
+
+/** Fixes to align sidebar and content top titles */
+.sidebar {
+  margin-top: 0;
+}
+.sidebar-sticky {
+  top: 3rem;
+  padding-top: 0; 
+}
+.sidebar-title h1 {
+  margin-top: 0;
+}
+.content {
+  padding-top: 3rem;
+}
+.content h1,
+.content .post h2 {
+  margin-top: 0;
+}
+
+@media (min-width: 48em) {
+  .content {
+    margin-left: 19rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .content {
+    margin-left: 20rem;
+  }
+}
+
