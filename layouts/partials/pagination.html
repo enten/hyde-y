@@ -1,7 +1,7 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ $pag := .Paginator }}
 {{ if gt $pag.TotalPages 1 }}
-<ul class="pagination">
+<nav class="container pagination">
   <li>
     <a aria-label="First" href="{{ $baseurl }}{{ $pag.First.URL }}">
     <span aria-hidden="true">««</span></a>
@@ -22,5 +22,5 @@
     <a aria-label="Last" href="{{ $baseurl }}{{ $pag.Last.URL }}">
       <span aria-hidden="true">»»</span></a>
   </li>
-</ul>
+</nav>
 {{ end }}

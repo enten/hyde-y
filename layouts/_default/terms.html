@@ -1,12 +1,19 @@
-{{ partial "header.html" . }}
-<section class="content container">
-  <h1>{{ .Title }}</h1>
-  <ul class="posts">
-    {{ $baseurl := .Site.BaseURL }}
-    {{ $data := .Data }}
-    {{ range $key,$value := .Data.Terms.ByCount }}
-    <li><h2><a href="{{ $baseurl }}{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </h2></li>
-    {{ end }}
+{{ partial "head" . }}
+<article id="main-content" class="container terms">
+  {{ partial "content/h1-title" . }}
+  <ul class="content">
+  {{ $baseurl := .Site.BaseURL }}
+  {{ $data := .Data }}
+  {{ range $key,$value := .Data.Terms.ByCount }}
+    <li>
+      <a href="{{ $baseurl }}{{ $data.Plural }}/{{ $value.Name | urlize }}">
+        {{ $value.Name }}
+      </a>
+      <strong>
+        {{ $value.Count }}
+      </strong>
+    </li>
+  {{ end }}
   </ul>
-</section>
-{{ partial "footer.html" . }}
+</article>
+{{ partial "foot" . }}

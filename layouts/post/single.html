@@ -1,13 +1,17 @@
-{{ partial "header.html" . }}
-<section class="content container">
-  <div class="post">
-    <h1>{{ if .Draft }}DRAFT :: {{ end }}{{ .Title }}</h1>
-    {{ partial "post-metas.html" . }}
-    <article>
-      {{ .Content }}
-    </article>
-    {{ partial "post-nav.html" . }}
-    {{ partial "comments.html" . }}
+{{ partial "head" . }}
+<article id="main-content" class="container single post">
+  <header>
+    {{ partial "content/h1-title" . }}
+    {{ partial "content/metas" . }}
+  </header>
+  <div class="content">
+    {{ .Content }}
   </div>
-</section>
-{{ partial "footer.html" . }}
+  <asside>
+    <h2>Navigation</h2>
+    {{ partial "content/navigation" . }}
+    <h2>Comments</h2>
+    {{ partial "comments" . }}
+  </asside>
+</article>
+{{ partial "foot" . }}

@@ -1,0 +1,20 @@
+{{ if .IsPage }}
+  {{ if or ( .NextInSection ) ( .PrevInSection ) }}
+<ul class="navigation">
+    {{ if .NextInSection }}
+  <li class="next">
+    <a id="next-page-link" href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
+      Next <span class="fa fa-arrow-right"></span>
+    </a>
+  </li>
+    {{end}}
+    {{ if .PrevInSection }}
+  <li class="prev">
+    <a id="prev-page-link" href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
+      <span class="fa fa-arrow-left"></span> Previous
+    </a>
+  </li>
+    {{end}}
+</ul>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,7 @@
+{{ with .Params.badges }}
+  {{range . }}
+    <a href="{{ .url }}">
+      <img class="badge" title="{{ if .title }}{{ .title }}{{ else }}{{ .alt }}{{ end }}" alt="{{ .alt }}" src="{{ .img }}">
+    </a>
+  {{ end }}
+{{ end }}

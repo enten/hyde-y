@@ -1,4 +1,1 @@
-<li>
-  <h2><a href="{{ .Permalink }}">{{ .Title }} {{ if .GetParam "draft"}}DRAFT{{end}}</a></h2>
-  {{ partial "post-metas.html" . }}
-</li>
+<li>{{ partial "links/title" . }}</li>

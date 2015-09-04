@@ -1,11 +1,12 @@
-{{ partial "header.html" . }}
-<section class="content container">
-  <div class="post">
-    <h1>{{ .Title }}</h1>
-    <article>
-      {{ .Content }}
-    </article>
-    {{ partial "comments.html" . }}
+{{ partial "head" . }}
+<article id="main-content" class="container single">
+  {{ partial "content/h1-title" . }}
+  <div class="content">
+    {{ .Content }}
   </div>
-</section>
-{{ partial "footer.html" . }}
+  <asside>
+    <h2>Comments</h2>
+    {{ partial "comments" . }}
+  </asside>
+</article>
+{{ partial "foot" . }}

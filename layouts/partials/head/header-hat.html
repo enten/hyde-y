@@ -1,0 +1,6 @@
+<div id="main-header-hat" class="container hat">
+  <strong>{{ .Site.Title }}</strong>
+  {{ if isset .Site.Params "tagline" }}
+  {{ .Site.Params.tagline | markdownify }}
+  {{ end }}
+</div>

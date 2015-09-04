@@ -1,0 +1,9 @@
+{{ if .IsPage }}
+<div class="tags">
+  {{ range .Params.tags }}
+  <a class="label" href="{{ "/tags/" | absURL }}{{ . | urlize }}">
+    {{ . }}
+  </a>
+  {{ end }}
+</div>
+{{ end }}
