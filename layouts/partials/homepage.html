@@ -1,15 +1,13 @@
 {{ partial "head" . }}
-<section id="main-content" class="container homepage">
-  <header>
-    {{ partial "content/h1-title" . }}
-    <small>
-      last update on {{ partial "content/lastupdate" . }}
-    </small>
+<section id="main-content" class="container main_content homepage">
+  <header class="container header">
+    {{ partial "atoms/page/h1-title" . }}
+    {{ partial "atoms/site/lastupdate" . }}
   </header>
   {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
   {{ range $paginator.Pages }}
   {{ .Render "summary" }}
   {{ end }}
-  {{ partial "pagination" . }}
+  {{ partial "atoms/site/pagination" . }}
 </section>
 {{ partial "foot" . }}

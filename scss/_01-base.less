@@ -1,0 +1,51 @@
+
+
+
+/* ----------------------------- */
+/* ==knacss imports              */
+/* ----------------------------- */
+
+@import "knacss/_01a-normalize"; // normalize
+@import "knacss/_01b-base"; // reset and basic styles
+@import "knacss/_04-tables"; // forms consistency
+@import "knacss/_05-forms"; // forms consistency
+@import "knacss/_08-print"; // print quick reset
+@import "knacss/_09-misc"; // skip links, google maps and hyphens
+@import "knacss/_10-styling"; // minor stylings
+
+
+
+/* ----------------------------- */
+/* ==overrides basic styles      */
+/* ----------------------------- */
+
+h1, .h1-like {
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+body {
+  @media @mq-small {
+    font-size: 1.2*@base-font-size;
+  }
+
+  @media @mq-large {
+    font-size: 1.3*@base-font-size;
+  }
+}
+
+p {
+  line-height: 1.3*@line-height;
+}

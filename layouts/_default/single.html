@@ -1,12 +1,7 @@
 {{ partial "head" . }}
-<article id="main-content" class="container single">
-  {{ partial "content/h1-title" . }}
-  <div class="content">
-    {{ .Content }}
-  </div>
-  <asside>
-    <h2>Comments</h2>
-    {{ partial "comments" . }}
-  </asside>
+<article id="main-content" class="container main_content single">
+  {{ .Render "hat" }}
+  {{ partial "atoms/page/content" . }}
+  {{ .Render "boot" }}
 </article>
 {{ partial "foot" . }}

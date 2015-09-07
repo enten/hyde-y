@@ -1,12 +1,5 @@
-<article class="container summary">
-  <header>
-    {{ partial "links/h2-title" . }}
-    {{ partial "content/metas" . }}
-  </header>
-  <p class="content">
-    {{ partial "content/summary" . }}
-  </p>
-  <footer class="readlink">
-    {{ partial "links/read" . }}
-  </footer>
+<article class="container content summary">
+  {{ .Render "hat-link" }}
+  {{ partial "atoms/page/summary" . }}
+  {{ .Render "boot-link" }}
 </article>

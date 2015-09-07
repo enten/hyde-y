@@ -1,0 +1,3 @@
+{{ if isset .Site.Params "footline" }}
+  {{ .Site.Params.footline | markdownify }}
+{{ end }}

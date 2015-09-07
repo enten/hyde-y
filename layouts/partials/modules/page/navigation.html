@@ -1,0 +1,17 @@
+{{ if .IsPage }}
+  {{ if or ( .NextInSection ) ( .PrevInSection ) }}
+
+    {{ if .PrevInSection }}
+    <a class="prev" href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
+      Previous
+    </a>
+    {{end}}
+
+    {{ if .NextInSection }}
+    <a class="next" href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
+      Next
+    </a>
+    {{end}}
+
+  {{ end }}
+{{ end }}

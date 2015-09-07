@@ -1,0 +1,120 @@
+
+
+.main_wrapper {
+  background-color: @secondary-background;
+}
+
+.main_header {
+  background-color: @primary-background;
+  font-family: @font-stack-headings;
+  color: @secondary-color;
+  text-align: center;
+
+  @media @mq-medium {
+    text-align: left;
+  }
+
+  a {
+      padding: @tiny-value/2;
+      color: @base-background;
+
+      &:hover {
+        background-color: @secondary-color;
+        color: @base-color;
+        text-decoration: none;
+      }
+  }
+
+  .brand {
+    a:hover {
+      background: transparent;
+      color: @base-background;
+    }
+    img {
+      display: block;
+      margin: auto;
+      max-width: 100px;
+
+      @media @mq-small {
+        max-width: 120px;
+      }
+
+      @media @mq-large {
+        max-width: 140px;
+      }
+    }
+  }
+
+  .nav {
+    a {
+      @media @mq-small {
+        padding: @small-value/2;
+      }
+
+      @media @mq-large {
+
+      }
+    }
+  }
+}
+
+.main_content {
+  .navigation > .prev,
+  .navigation > .next,
+  .pagination a,
+  .readlink a {
+    //border: 1px solid @base-color-link;
+    background-color: @secondary-background;
+
+    &:hover {
+      background-color: @primary-background;
+      //border-color: @primary-background;
+      text-decoration: none;
+      color: @base-background;
+    }
+
+    &.active {
+      background-color: @base-color-link;
+      color: @base-background;
+
+      &:hover {
+        //border-color: @base-color-link;
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: grey;
+
+      &:hover {
+        background-color: @secondary-background;
+      }
+    }
+  }
+
+  .label {
+    padding: 2px @tiny-plus-value;
+    margin-right: @tiny-value;
+    background-color: @primary-background;
+    color: @base-background;
+  }
+
+  a.label {
+    padding: 2px;
+    background-color: @base-background;
+    color: @base-color-link;
+    text-decoration: none;
+  }
+
+  a.label:hover {
+    background-color: @primary-background;
+    color: @base-background;
+    text-decoration: none;
+  }
+
+}
+
+.main_footer {
+  font-family: @font-stack-universal;
+  font-size: @small-value;
+}

@@ -1,0 +1,13 @@
+<div class="metas">
+{{ partial "modules/page/date" . }}
+{{ if .IsPage }}
+  {{ with .Params.author }}
+    &middot; by {{ . }}
+  {{ end }}
+  &middot; Read in about {{ .ReadingTime }} min
+  &middot; ({{ .WordCount }} Words)
+  <div class="tags">
+    {{ partial "modules/page/tags" . }}
+  </div>
+{{ end }}
+</div>

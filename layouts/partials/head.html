@@ -6,10 +6,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
-  {{ partial "head/metas" . }}
-  {{ partial "head/imports" . }}
+  {{ partial "base/metas" . }}
+  {{ partial "base/imports" . }}
   {{ partial "head-extra" . }}
 </head>
 <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
-  <main id="main-wrapper" class="container main_wrapper">
-    {{ partial "head/header" . }}
+  <main id="main-wrapper" class="container main_wrapper{{ with .Site.Params.sidebar }}{{ if and ( not ( eq . "" ) ) ( not ( eq . "false" ) ) }} has-sidebar{{ end }}{{ if eq . "right" }} right{{ end }}{{ end }}">
+    {{ partial "base/header" . }}

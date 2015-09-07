@@ -1,7 +1,9 @@
 {{ partial "head" . }}
-<article id="main-content" class="container terms">
-  {{ partial "content/h1-title" . }}
-  <ul class="content">
+<article id="main-content" class="container main_content terms">
+  <div class="container">
+    {{ partial "atoms/page/h1-title" . }}
+  </div>
+  <ul class="container content">
   {{ $baseurl := .Site.BaseURL }}
   {{ $data := .Data }}
   {{ range $key,$value := .Data.Terms.ByCount }}

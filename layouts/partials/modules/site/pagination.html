@@ -1,0 +1,25 @@
+{{ $baseurl := .Site.BaseURL }}
+{{ $pag := .Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<a aria-label="First" href="{{ $baseurl }}{{ $pag.First.URL }}">
+  <span aria-hidden="true">««</span>
+</a>
+
+<a{{ if not $pag.HasPrev }} class="disabled"{{ end }} aria-label="Previous" href="{{ if $pag.HasPrev }}{{ $baseurl }}{{ $pag.Prev.URL }}{{ else }}#{{ end }}">
+  <span aria-hidden="true">«</span>
+</a>
+
+{{ range $pag.Pagers }}
+<a{{ if eq . $pag }} class="active"{{ end }} href="{{ $baseurl }}{{ .URL }}">
+  {{ .PageNumber }}
+</a>
+{{ end }}
+
+<a{{ if not $pag.HasNext }} class="disabled"{{ end }} aria-label="Next" href="{{ if $pag.HasNext }}{{ $baseurl }}{{ $pag.Next.URL }}{{ else }}#{{ end }}">
+  <span aria-hidden="true">»</span>
+</a>
+
+<a aria-label="Last" href="{{ $baseurl }}{{ $pag.Last.URL }}">
+  <span aria-hidden="true">»»</span>
+</a>
+{{ end }}
