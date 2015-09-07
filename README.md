@@ -37,6 +37,9 @@ This theme expects a relatively standard Hugo blog/personal site layout:
     ├── post
     |   ├── post1.md
     |   └── post2.md
+    ├── code
+    |   ├── project1.md
+    |   ├── project2.md
     ├── license.md        // this is used in the sidebar footer link
     └── other_page.md
 ```
@@ -51,11 +54,14 @@ An example of what your site's `config.toml` could look like. All theme-specific
 # hostname (and path) to the root eg. http://spf13.com/
 baseurl = "http://www.example.com"
 
-# Site title
+# Site title
 title = "Your site"
 
-# Language
+# Language
 languageCode = "en-EN"
+
+# "yaml", "toml", "json"
+metaDataFormat = "yaml"
 
 # theme to use (located in /themes/THEMENAME/)
 theme = "hyde-y"
@@ -64,8 +70,12 @@ theme = "hyde-y"
 paginate = 5
 paginatePath = "page"
 
+# Enable Disqus integration
+disqusShortname = "your_disqus_shortname"
+
 [permalinks]
     post = "/:year/:month/:day/:slug/"
+    repo = "/:slug/"
 
 [taxonomies]
     tag = "tags"
@@ -74,43 +84,26 @@ paginatePath = "page"
 [author]
     name = "Your Name"
     email = "yourname@example.com"
-    gravatarHash = "" # MD5 hash of your Gravatar email address
-    sidebarDisplay = false
-    copyrightDisplay = true
-
-[[menu.main]]
-    name = "Posts"
-    identifier = "posts"
-    url = "/post/"
-
-[[menu.main]]
-    name = "Tags"
-    identifier = "tags"
-    url = "/tags/"
 
 #
 # All parameters below here are optional and can be mixed and matched.
 #
 [params]
-    # Displays under the author name in the sidebar, keep it short.
+    # Displays in the sidebar, keep it short.
     # You can use markdown here.
-    tagline = "Short description about your site"
+    brand = "You site"
+    topline = "few words about your site"
+    footline = "made with love"
+
+    sidebar = "left"
 
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
-    home = "Home"
-
-    # Changes sidebar background and link/accent colours.
-    # See below for more colour options.
-    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
-    theme = "theme-base-00"
+    home = "home"
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
-    highlight = "sunburst"
-
-    # Enable Disqus integration
-    disqusShortname = "your_disqus_shortname"
+    highlight = "default"
 
     # Google Analytics.
     googleAnalytics = "Your Google Analytics tracking code"
@@ -118,10 +111,10 @@ paginatePath = "page"
     # Sidebar social links.
     github = "" # Your Github profile ID
     bitbucket = "" # Your Bitbucket profile ID
-    linkedin = "" # Your LinkedIn profile ID (from public URL)
+    linkedin = "" # Your LinkedIn profile ID (from public URL)
     googleplus = "" # Your Google+ profile ID
     facebook = "" # Your Facebook profile ID
-    twitter = "" # Your Twitter profile ID
+    twitter = "" # Your Twitter profile ID
     youtube = ""  # Your Youtube channel ID
     flattr = ""  # populate with your flattr uid
     rss = true  # switch to true to enable RSS icon link
@@ -159,9 +152,21 @@ Create `data/Menu.toml` to configure the sidebar navigation menu. Example below.
 
 ### Built-in colour themes
 
-Hyde-Y provides 8 built-in colour themes by default, with the option to define more in your own custom CSS.
+```bash
+$ vi scss/_00-config.less
+# edit colors configuration
 
-![Hyde-Y theme classes](https://github.com/enten/hyde-y/blob/master/images/theme-colours.png)
+$ npm install
+$ npm run build:css
+
+> hyde-y@0.0.3 build:css /home/steven/code/hyde-y
+> grunt
+
+Running "less:development" (less) task
+File static/css/style.css created
+
+Done, without errors.
+```
 
 ### Tips
 
@@ -176,7 +181,6 @@ Hyde-Y provides 8 built-in colour themes by default, with the option to define m
 * Category labels and lists.
 * Client-side syntax highlighting through [highlight.js](https://highlightjs.org/), sane fallback if disabled or no JS - infinitely more flexible than the standard Hugo highlighting.
 * Disqus integration: comment counts listed under blog entry names in post list, comments displayed at the bottom of each post.
-* Gravatar image in sidebar.
 * Google Analytics integration.
 * Google Authorship metadata.
 * Sidebar link layout and footer format changes.
