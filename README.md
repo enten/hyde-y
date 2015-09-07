@@ -75,7 +75,7 @@ disqusShortname = "your_disqus_shortname"
 
 [permalinks]
     post = "/:year/:month/:day/:slug/"
-    repo = "/:slug/"
+    code = "/:slug/"
 
 [taxonomies]
     tag = "tags"
