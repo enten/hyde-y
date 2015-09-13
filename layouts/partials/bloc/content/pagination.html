@@ -1,0 +1,5 @@
+{{ if gt $.Paginator.TotalPages 1 }}
+<div class="container pagination">
+  {{ partial "modules/site/pagination.html" . }}
+</div>
+{{ end }}

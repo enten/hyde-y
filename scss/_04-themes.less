@@ -1,0 +1,118 @@
+
+
+.btn() {
+  text-decoration: none;
+
+  &:hover {
+    background-color: @primary-background;
+    color: @secondary-background;
+    text-decoration: none;
+  }
+
+  &.active {
+    font-weight: bold;
+    background-color: @secondary-background;
+    color: @base-color;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: grey;
+
+    &:hover {
+      background-color: @secondary-background;
+    }
+  }
+}
+
+.main_wrapper {
+
+  &> .main_header {
+    padding-top: @large-plus-value;
+    padding-bottom: @large-plus-value;
+
+    @media @mq-small {
+      padding-top: @extra-large-value;
+      padding-bottom: @extra-large-value;
+    }
+
+    @media @mq-medium {
+      padding: @medium-value;
+    }
+
+    @media @mq-large {
+      padding: @large-value;
+    }
+  }
+
+  &> .main_header .brand,
+  &> .main_header .nav a,
+  &> .main_content .navigation a,
+  &> .main_content .pagination a {
+      padding: @tiny-value;
+  }
+
+  &> .main_header .brand {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &> .main_header .brand .title,
+  &> .main_content h1,
+  &> .main_content .hat h2 {
+    margin-bottom: @tiny-value;
+  }
+
+  background-color: @secondary-background;
+
+  &> .main_header a,
+  &> .main_content h2 a,
+  &> .main_content .label,
+  &> .main_content .navigation a,
+  &> .main_content .pagination a,
+  &> .main_content .readlink a {
+    .btn();
+  }
+
+  &> .main_header {
+    background-color: @primary-background;
+    font-family: @font-stack-headings;
+    color: @secondary-color;
+    text-align: center;
+
+    a {
+      color: @base-background;
+
+      &:hover {
+        background-color: @secondary-color;
+        color: @base-color;
+      }
+    }
+  }
+
+  &> .main_content .label:not(a) {
+    padding: 2px;
+    background-color: @primary-background;
+    color: @secondary-background;
+  }
+
+  &> .main_content .metas,
+  &> .main_content time {
+    color: grey;
+  }
+
+  &> .main_content,
+  &> .main_footer {
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &> .main_footer {
+    font-size: 0.8em;
+  }
+}

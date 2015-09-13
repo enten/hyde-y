@@ -1,10 +1,3 @@
-{{ if ne .Site.Copyright "" }}
-  {{ .Site.Copyright | markdownify }}
-{{ else }}
-  &copy; {{ .Now.Format "2006" }}
-  {{ if and ( isset .Site.Author "name" ) ( ne .Site.Author.name "" ) }}
-  {{ .Site.Author.name }}
-  {{ else }}
-  {{ .Site.Title }}
-  {{ end }}
+{{ with .Site.Copyright }}
+  {{ . | markdownify }}
 {{ end }}

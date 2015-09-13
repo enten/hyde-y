@@ -1,106 +1,111 @@
 
 
 
-
 /* ----------------------------- */
-/* ==main layouts                */
+/* ==layout mixins               */
 /* ----------------------------- */
 
-.main_wrapper {
+.container-lvl-0() {
+  margin: 0 auto;
+  padding: 0;
+}
 
-  .container {
-
-  &> .container {
-    max-width: @medium-screen;
-    margin: auto;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  &> .container {
-    padding: @tiny-value;
-
-    &> .container {
-      margin-bottom: @tiny-plus-value;
-
-      &> .container {
-        margin-bottom: @tiny-plus-value;
-
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
+.container-lvl-1() {
+  margin: 0 auto;
+  max-width: @medium-screen;
+  padding: @tiny-value;
 
   @media @mq-small {
-    &> .container {
-      padding: @small-value;
-
-      &> .container {
-        margin-bottom: @small-plus-value;
-
-        &> .container {
-          margin-bottom: @small-value;
-        }
-      }
-    }
+    padding: @small-value;
   }
 
   @media @mq-medium {
-    &> .container {
-      padding: @medium-value;
-
-      &> .container {
-
-        &> .container {
-
-        }
-      }
-    }
+    padding: @medium-value;
   }
 
   @media @mq-large {
-    &> .container {
-      padding: @large-value;
+    padding: @large-value;
+  }
+}
 
-      &> .container {
-        margin-bottom: @medium-plus-value;
+.container-lvl-2() {
+  margin-top: 0;
+  margin-bottom: @tiny-value;
 
-        &> .container {
-          margin-bottom: @small-plus-value;
-        }
-      }
-    }
+  @media @mq-small {
+    margin-bottom: @small-value;
   }
 
-  .main_header {
-    padding-top: @large-plus-value;
-    padding-bottom: @large-plus-value;
+  @media @mq-medium {
+    margin-bottom: @medium-value;
+  }
+}
 
-    @media @mq-small {
-      padding-top: @extra-large-value;
-      padding-bottom: @extra-large-value;
-    }
+.container-lvl-3() {
+  margin-top: 0;
+  margin-bottom: @tiny-value;
 
-    @media @mq-medium {
-      padding: @medium-value;
-    }
-
-    @media @mq-large {
-        padding: @large-value;
-    }
+  @media @mq-small {
+    margin-bottom: @small-value;
   }
 
-  .main_footer {
-    @media @mq-small {
-      &> .container {
-        margin-bottom: @small-value;
-      }
-    }
+  @media @mq-medium {
+    margin-bottom: @medium-value;
+  }
+}
+
+
+
+/* ----------------------------- */
+/* ==layout main                 */
+/* ----------------------------- */
+
+.main_wrapper {
+  .container-lvl-0();
+
+  &> .container {
+    .container-lvl-1();
+  }
+
+  &> .container > .container {
+    .container-lvl-2();
+  }
+
+  h1,
+  .@{kna-namespace}h1-like,
+  h2,
+  .@{kna-namespace}h2-like,
+  h3,
+  .@{kna-namespace}h3-like,
+  h4,
+  .@{kna-namespace}h4-like,
+  h5,
+  .@{kna-namespace}h5-like,
+  h6,
+  .@{kna-namespace}h6-like,
+  p,
+  .@{kna-namespace}p-like,
+  ul,
+  ol,
+  dl,
+  blockquote,
+  label,
+  pre,
+  table,
+  details,
+  figure,
+  &> .container > .container > .container {
+    .container-lvl-3();
+  }
+
+  input,
+  code,
+  label,
+  textarea,
+  &> .main_header > .container > .container,
+  &> .main_footer > .container > .container,
+  .container > .container:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }

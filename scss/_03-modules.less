@@ -1,22 +1,24 @@
 
 
-/*
 
-labels
-tags
-badges
+/* ----------------------------- */
+/* ==badges                      */
+/* ----------------------------- */
+
+.badges {
+  a {
+    text-decoration: none;
+  }
+}
 
 
-fix github ribbon position left right
-
-*/
 
 /* ----------------------------- */
 /* ==github ribbon               */
 /* ----------------------------- */
 
 .ribbon.git {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   border: 0;
@@ -46,7 +48,6 @@ fix github ribbon position left right
     position: absolute;
     top: 0;
     width: 49%;
-    padding: @tiny-value;
     text-align: center;
   }
 
@@ -55,7 +56,6 @@ fix github ribbon position left right
   }
 
   &> .next {
-    left: auto;
     right: 0;
   }
 
@@ -70,30 +70,6 @@ fix github ribbon position left right
       font-family: FontAwesome;
       content: "\f061";
       margin-left: @small-value;
-    }
-  }
-
-  @media @mq-medium {
-    &> .prev, .next {
-      padding: @small-value;
-    }
-  }
-}
-
-
-
-/* ----------------------------- */
-/* ==pagination module           */
-/* ----------------------------- */
-
-.main_content .pagination {
-  &> a {
-    padding: @tiny-value;
-  }
-
-  @media @mq-medium {
-    &> a {
-      padding: @small-value;
     }
   }
 }
@@ -114,6 +90,7 @@ fix github ribbon position left right
       left: 0;
       top: 0;
       bottom: 0;
+      text-align: left;
 
       .nav.primary {
         a {

@@ -5,15 +5,24 @@
 
 // Config file and project variables
 
+// import default variables
+@import "knacss/_00-config";
+
 // font sizes
-@base-font-size : 12px; // if "14px" then 1em = 14px
-@line-height    : 1.5; // equiv line-height 1.5
-@h1-size        : 3rem; // equiv "32px"
-@h2-size        : 2.2rem; // equiv "28px"
-@h3-size        : 1.6rem; // equiv "24px"
-@h4-size        : 1.3rem; // equiv "20px"
-@h5-size        : 1.2rem; // equiv "18px"
-@h6-size        : 1rem; // equiv "16px"
+@root-font-size        : 62.5%; // if "62.5%" then 1rem = 10px
+@root-font-size-small  : 65.1%; // 1rem ~= 13px
+@root-font-size-medium : 67.7%; // 1rem ~= 13px
+@root-font-size-large  : 72.9%; // 1rem ~= 14px
+@base-font-size        : 1.2rem; // equiv "12px" (1.2 * @root-font-size)
+@h1-size               : 2.8rem; // equiv "32px"
+@h2-size               : 2.4rem; // equiv "28px"
+@h3-size               : 2.0rem; // equiv "24px"
+@h4-size               : 1.6rem; // equiv "20px"
+@h5-size               : 1.4rem; // equiv "18px"
+@h6-size               : 1.2rem; // equiv "16px"
+@base-line-height      : 1.5;
+@headings-line-height  : 1.0;
+@paragraph-line-height : 1.8;
 
 // font stacks
 @font-stack-common      : Merriweather, Georgia, serif; // common font
@@ -53,31 +62,16 @@
 
 // breakpoints (choose unit you prefer)
 @tiny-screen            : 320px; // tiny screens media query (less-equal than 320px)
-@tiny-plus-screen       : 480px; // screens between 321px and 480px
 @small-screen           : 640px; // screens between 481px and 640px
-@small-plus-screen      : 768px; // screens between 641px and 768px
 @medium-screen          : 960px; // screens between 769px and 960px
-@medium-plus-screen     : 1024px; // screens between 961px and 1024px
 @large-screen           : 1280px; // screens between 1025px and 1280px
-@large-plus-screen      : 1440px; // screens between 1281px and 1440px
-@extra-large-screen     : 1600px; // screens between 1441px and 1600px
-@ultra-large-screen     : 1920px; // ultra large screens
-
-// grids variables (choose unit you prefer)
-@gutter:  1em; // gutter value for grid layouts. Unit can be: %, px, em, rem
-@number:  4; // number of equal columns
-@left:    2; // left side of uneven columns
-@right:   1; // right side of uneven columns
-
-//namespace (default : empty)
-@kna-namespace:~"";
 
 // media queries
-@mq-large: ~"only screen and (min-width: @{medium-screen})";
-@mq-medium: ~"only screen and (min-width: @{small-screen})";
-@mq-small: ~"only screen and (min-width: @{tiny-screen})";
 @mq-tiny: ~"only screen and (max-width: @{tiny-screen})";
+@mq-small: ~"only screen and (min-width: @{tiny-screen})";
+@mq-medium: ~"only screen and (min-width: @{small-screen})";
+@mq-large: ~"only screen and (min-width: @{medium-screen})";
 
 // sidebar module
 @sidebar-medium-width: 240px;
-@sidebar-large-width: 350px;
+@sidebar-large-width: 320px;

@@ -3,9 +3,8 @@ Hyde-Y
 
 <small>Forked from [Hyde-X](https://github.com/zyro/hyde-x)</small>
 
-Enhanced port of the Jekyll "[Hyde](https://github.com/poole/hyde)" theme to the [Hugo](http://gohugo.io) site generator. Check below for a list of enhancements.
-
-You can find a live site using this theme [here](http://andreimihu.com) and the corresponding source code [here](https://github.com/zyro/andreimihu.com).
+You can find a live site using this theme [here](http://enten.github.io/hugo-boilerplate/)
+and the corresponding source code [here](https://github.com/enten/hugo-boilerplate).
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -48,6 +47,8 @@ Just run `hugo --theme=hyde-y` to generate your site!
 
 ### Configuration
 
+#### Hugo
+
 An example of what your site's `config.toml` could look like. All theme-specific parameters are under `[params]` and standard Hugo parameters are used where possible.
 
 ``` toml
@@ -55,7 +56,10 @@ An example of what your site's `config.toml` could look like. All theme-specific
 baseurl = "http://www.example.com"
 
 # Site title
-title = "Your site"
+title = "sitename"
+
+# Copyright
+copyright = "(c) 2015 yourname."
 
 # Language
 languageCode = "en-EN"
@@ -67,7 +71,7 @@ metaDataFormat = "yaml"
 theme = "hyde-y"
 
 # pagination
-paginate = 5
+paginate = 10
 paginatePath = "page"
 
 # Enable Disqus integration
@@ -82,19 +86,20 @@ disqusShortname = "your_disqus_shortname"
     topic = "topics"
 
 [author]
-    name = "Your Name"
+    name = "yourname"
     email = "yourname@example.com"
 
 #
 # All parameters below here are optional and can be mixed and matched.
 #
 [params]
-    # Displays in the sidebar, keep it short.
     # You can use markdown here.
-    brand = "You site"
+    brand = "foobar"
     topline = "few words about your site"
-    footline = "made with love"
+    footline = "code with <i class='fa fa-heart'></i>"
 
+    # Sidebar position
+    # false, true, "left", "right"
     sidebar = "left"
 
     # Text for the top menu link, which goes the root URL for the site.
@@ -109,7 +114,7 @@ disqusShortname = "your_disqus_shortname"
     googleAnalytics = "Your Google Analytics tracking code"
 
     # Sidebar social links.
-    github = "" # Your Github profile ID
+    github = "enten/hugo-boilerplate" # Your Github profile ID
     bitbucket = "" # Your Bitbucket profile ID
     linkedin = "" # Your LinkedIn profile ID (from public URL)
     googleplus = "" # Your Google+ profile ID
@@ -117,7 +122,6 @@ disqusShortname = "your_disqus_shortname"
     twitter = "" # Your Twitter profile ID
     youtube = ""  # Your Youtube channel ID
     flattr = ""  # populate with your flattr uid
-    rss = true  # switch to true to enable RSS icon link
 
 [blackfriday]
     angledQuotes = true
@@ -130,9 +134,9 @@ disqusShortname = "your_disqus_shortname"
 
 ```
 
-## Menu
+#### Menu
 
-Create `data/Menu.toml` to configure the sidebar navigation menu. Example below.
+Create `data/Menu.toml` to configure the sidebar navigation links. Example below.
 
 ```toml
 [about]
@@ -150,11 +154,21 @@ Create `data/Menu.toml` to configure the sidebar navigation menu. Example below.
     URL = "/tags"
 ```
 
+#### Menu
+
+Create `data/FootMenu.toml` to configure the footer navigation links. Example below.
+
+```toml
+[license]
+    Name = "license"
+    URL = "/license"
+```
+
 ### Built-in colour themes
 
 ```bash
 $ vi scss/_00-config.less
-# edit colors configuration
+# edit configuration
 
 $ npm install
 $ npm run build:css
@@ -172,26 +186,28 @@ Done, without errors.
 
 * If you've added `theme = "hyde-y"` to your `config.toml`, you don't need to keep using the `--theme=hyde-y` flag!
 * Although all of the syntax highlight CSS files under the theme's `static/css/highlight` are bundled with the site, only the one you choose will be included in the page and delivered to the browser.
-* Change the favicon by providing your own as `static/favicon.png` in your site directory.
+* Change the favicon by providing your own as `static/favicon.png` (and `static/touch-icon-144-precomposed.png` for Apple devices) in your site directory.
 * Hugo makes it easy to override theme layout and behaviour, read about it [here](http://gohugo.io/themes/customizing).
 * Pagination is set to 10 items by default, change it by updating `paginate = 10` in your `config.toml`.
 
 ### Changes and enhancements from the original theme
 
-* Category labels and lists.
+* Highly customizable: every layout blocks are pieces of HTML code individually stored.
+* Consistent hierarchy for the partials and templates files to assist the overrides of any layout block.
+* Adjustable sidebar in config file.
+* Project layout (badges, github ribbon) for posts stored in `content/code/` folder.
+* CSS built with [KNACSS](http://knacss.com/) micro-framework.
 * Client-side syntax highlighting through [highlight.js](https://highlightjs.org/), sane fallback if disabled or no JS - infinitely more flexible than the standard Hugo highlighting.
 * Disqus integration: comment counts listed under blog entry names in post list, comments displayed at the bottom of each post.
 * Google Analytics integration.
 * Google Authorship metadata.
-* Sidebar link layout and footer format changes.
-* Blog post list now contains only the post description, not the full contents.
 * Paginated blog listing.
 * [FontAwesome](http://fortawesome.github.io/Font-Awesome) social links.
 * ...many other small layout tweaks!
 
 ### Attribution
 
-Obviously largely a port of the awesome [Hyde](https://github.com/poole/hyde) theme.
+Obviously largely a port of the awesome [Hyde](https://github.com/poole/hyde) and [Hyde-X](https://github.com/zyro/hyde-x) themes.
 
 ### Questions, ideas, bugs, pull requests?
 

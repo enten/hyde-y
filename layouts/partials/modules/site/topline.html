@@ -1,3 +1,3 @@
-{{ if isset .Site.Params "topline" }}
-{{ .Site.Params.topline | markdownify }}
+{{ with .Site.Params.topline }}
+  {{ . | markdownify }}
 {{ end }}

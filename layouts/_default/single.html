@@ -1,7 +1,7 @@
 {{ partial "head" . }}
 <article id="main-content" class="container main_content single">
-  {{ .Render "hat" }}
-  {{ partial "atoms/page/content" . }}
-  {{ .Render "boot" }}
+  {{ .Render "single.hat" }}
+  {{ .Render "single.content" }}
+  {{ .Render "single.boot" }}
 </article>
 {{ partial "foot" . }}

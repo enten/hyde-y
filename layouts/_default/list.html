@@ -1,13 +1,13 @@
 {{ partial "head" . }}
 <article id="main-content" class="container main_content list">
-  <div class="container">
-    {{ partial "atoms/page/h1-title" . }}
-  </div>
+  <header class="container">
+    {{ partial "bloc/content/h1-title" . }}
+  </header>
   <ul class="container content">
     {{ range $index, .Paginator.Pages }}
-      {{ .Render "li" }}
+      {{ .Render "list.li" }}
     {{ end }}
   </ul>
-  {{ partial "atoms/site/pagination.html" . }}
+  {{ partial "bloc/content/pagination.html" . }}
 </article>
 {{ partial "foot" . }}
