@@ -8,7 +8,7 @@ and the corresponding source code [here](https://github.com/enten/hugo-boilerpla
 
 ## Screenshot
 
-![preview](https://github.com/enten/hyde-y/blob/master/screenshot.png)
+![preview](https://github.com/enten/hyde-y/blob/master/images/screenshot.png)
 
 ## Installation
 
