@@ -3,7 +3,7 @@
   (function(id){
     var s = document.getElementById(id);
     var f = document.createElement('iframe');
-    f.src = '//api.flattr.com/button/view/?uid={{ .Site.Params.flattr }}&button=compact&url={{ .Site.BaseUrl }}&title={{ .Site.Title }}';
+    f.src = '//api.flattr.com/button/view/?uid={{ .Site.Params.flattr }}&button=compact&url={{ .Site.BaseURL }}&title={{ .Site.Title }}';
     f.title = 'Flattr';
     f.height = 20;
     f.width = 110;
