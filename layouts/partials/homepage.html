@@ -1,4 +1,3 @@
-{{ partial "head" . }}
 <section id="main-content" class="container main_content homepage">
   <header class="container header">
     {{ partial "bloc/content/h1-title" . }}
@@ -6,8 +5,7 @@
   </header>
   {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
   {{ range $paginator.Pages }}
-  {{ .Render "summary" }}
+    {{ .Render "summary" }}
   {{ end }}
   {{ partial "bloc/content/pagination" . }}
 </section>
-{{ partial "foot" . }}

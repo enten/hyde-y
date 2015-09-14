@@ -6,17 +6,11 @@ Hyde-Y
 You can find a live site using this theme [here](http://enten.github.io/hugo-boilerplate/)
 and the corresponding source code [here](https://github.com/enten/hugo-boilerplate).
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [Configuration](#configuration)
-* [Built-in colour themes](#built-in-colour-themes)
-* [Tips](#tips)
-* [Changes and enhancements from the original theme](#changes-and-enhancements-from-the-original-theme)
-* [Attribution](#attribution)
-* [Questions, ideas, bugs, pull requests?](#questions-ideas-bugs-pull-requests)
-* [License](#license)
+## Screenshot
 
-### Installation
+![preview](https://github.com/enten/hyde-y/blob/master/screenshot.png)
+
+## Installation
 
 ```
 $ cd your_site_repo/
@@ -27,7 +21,7 @@ $ git clone https://github.com/enten/hyde-y
 
 See the [official Hugo themes documentation](http://gohugo.io/themes/installing) for more info.
 
-### Usage
+## Usage
 
 This theme expects a relatively standard Hugo blog/personal site layout:
 ```
@@ -45,9 +39,9 @@ This theme expects a relatively standard Hugo blog/personal site layout:
 
 Just run `hugo --theme=hyde-y` to generate your site!
 
-### Configuration
+## Configuration
 
-#### Hugo
+### Hugo
 
 An example of what your site's `config.toml` could look like. All theme-specific parameters are under `[params]` and standard Hugo parameters are used where possible.
 
@@ -64,13 +58,14 @@ copyright = "(c) 2015 yourname."
 # Language
 languageCode = "en-EN"
 
+# Metadata format
 # "yaml", "toml", "json"
 metaDataFormat = "yaml"
 
-# theme to use (located in /themes/THEMENAME/)
+# Theme to use (located in /themes/THEMENAME/)
 theme = "hyde-y"
 
-# pagination
+# Pagination
 paginate = 10
 paginatePath = "page"
 
@@ -134,7 +129,7 @@ disqusShortname = "your_disqus_shortname"
 
 ```
 
-#### Menu
+### Menu
 
 Create `data/Menu.toml` to configure the sidebar navigation links. Example below.
 
@@ -154,7 +149,7 @@ Create `data/Menu.toml` to configure the sidebar navigation links. Example below
     URL = "/tags"
 ```
 
-#### Menu
+### Foot menu
 
 Create `data/FootMenu.toml` to configure the footer navigation links. Example below.
 
@@ -164,7 +159,9 @@ Create `data/FootMenu.toml` to configure the footer navigation links. Example be
     URL = "/license"
 ```
 
-### Built-in colour themes
+## Built-in colour themes
+
+You can rebuild the stylesheet. To do it you need [npm](http://npmjs.com/) and run the task `build:css`.
 
 ```bash
 $ vi scss/_00-config.less
@@ -173,16 +170,21 @@ $ vi scss/_00-config.less
 $ npm install
 $ npm run build:css
 
-> hyde-y@0.0.3 build:css /home/steven/code/hyde-y
-> grunt
+> hyde-y@0.0.4 build:css /home/steven/code/hyde-y
+> grunt build:css
 
 Running "less:development" (less) task
 File static/css/style.css created
 
+Running "cssmin:target" (cssmin) task
+>> 1 file created. 27.04 kB → 14.38 kB
+
 Done, without errors.
 ```
 
-### Tips
+The task `watch` allows to rebuild the stylesheet when a change is spotted on `scss/*.less` files.
+
+## Tips
 
 * If you've added `theme = "hyde-y"` to your `config.toml`, you don't need to keep using the `--theme=hyde-y` flag!
 * Although all of the syntax highlight CSS files under the theme's `static/css/highlight` are bundled with the site, only the one you choose will be included in the page and delivered to the browser.
@@ -190,7 +192,7 @@ Done, without errors.
 * Hugo makes it easy to override theme layout and behaviour, read about it [here](http://gohugo.io/themes/customizing).
 * Pagination is set to 10 items by default, change it by updating `paginate = 10` in your `config.toml`.
 
-### Changes and enhancements from the original theme
+## Changes and enhancements from the original theme
 
 * Highly customizable: every layout blocks are pieces of HTML code individually stored.
 * Consistent hierarchy for the partials and templates files to assist the overrides of any layout block.
@@ -205,14 +207,14 @@ Done, without errors.
 * [FontAwesome](http://fortawesome.github.io/Font-Awesome) social links.
 * ...many other small layout tweaks!
 
-### Attribution
+## Attribution
 
 Obviously largely a port of the awesome [Hyde](https://github.com/poole/hyde) and [Hyde-X](https://github.com/zyro/hyde-x) themes.
 
-### Questions, ideas, bugs, pull requests?
+## Questions, ideas, bugs, pull requests?
 
 All feedback is welcome! Head over to the [issue tracker](https://github.com/enten/hyde-y/issues).
 
-### License
+## License
 
 Open sourced under the [MIT license](https://github.com/enten/hyde-y/blob/master/LICENSE).
