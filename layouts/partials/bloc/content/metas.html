@@ -2,10 +2,10 @@
 {{ partial "modules/page/date" . }}
 {{ if .IsPage }}
   {{ with .Params.author }}
-    &middot; by {{ . }}
+    &middot; {{ $.Site.Data.Strings.byauthor }} {{ . }}
   {{ end }}
-  &middot; Read in about {{ .ReadingTime }} min
-  &middot; ({{ .WordCount }} Words)
+  &middot; {{ .Site.Data.Strings.metaReadin }} {{ .ReadingTime }} {{ .Site.Data.Strings.metaReadinMinutes }}
+  &middot; ({{ .WordCount }} {{ .Site.Data.Strings.words }})
   <br>
   {{ partial "modules/page/tags" . }}
 {{ end }}

@@ -3,13 +3,13 @@
 
     {{ if .PrevInSection }}
     <a class="prev" href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
-      Previous
+      {{ .Site.Data.Strings.previous }}
     </a>
     {{end}}
 
     {{ if .NextInSection }}
     <a class="next" href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
-      Next
+      {{ .Site.Data.Strings.next }}
     </a>
     {{end}}
 
