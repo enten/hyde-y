@@ -117,6 +117,8 @@ disqusShortname = "your_disqus_shortname"
     twitter = "" # Your Twitter profile ID
     youtube = ""  # Your Youtube channel ID
     flattr = ""  # populate with your flattr uid
+    flickr = "" # Your Flickr profile ID
+    vimeo = "" # Your Vimeo profile ID
 
 [blackfriday]
     angledQuotes = true
