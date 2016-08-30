@@ -120,6 +120,10 @@ disqusShortname = "your_disqus_shortname"
     flickr = "" # Your Flickr profile ID
     vimeo = "" # Your Vimeo profile ID
 
+    # Sidebar RSS link: will only show up if there is a RSS feed
+    # associated with the current page
+    rss = true
+
 [blackfriday]
     angledQuotes = true
     fractions = false
