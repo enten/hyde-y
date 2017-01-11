@@ -9,6 +9,18 @@
   {{ partial "base/metas" . }}
   {{ partial "base/imports" . }}
   {{ partial "head-extra" . }}
+  {{ with .Site.Params.googleAnalytics }}
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', '{{ . }}', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+{{ end }}
 </head>
 <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
   <main id="main-wrapper" class="container main_wrapper{{ with .Site.Params.sidebar }}{{ if and ( not ( eq . "" ) ) ( not ( eq . "false" ) ) }} has-sidebar{{ end }}{{ if eq . "right" }} right{{ end }}{{ end }}">
