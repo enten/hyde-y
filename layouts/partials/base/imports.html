@@ -6,4 +6,4 @@
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ "css/font-awesome.min.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-{{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "css/highlight/{{ .Site.Params.highlight }}.css" | relURL}}">{{ end }}
+{{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "/css/highlight/" | relURL }}{{ .Site.Params.highlight }}.css">{{ end }}
