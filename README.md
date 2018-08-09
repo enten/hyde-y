@@ -177,7 +177,7 @@ $ npm install
 $ npm run build:css
 
 > hyde-y@0.0.4 build:css /home/steven/code/hyde-y
-> npx grunt build:css
+> grunt build:css
 
 Running "less:development" (less) task
 File static/css/style.css created
