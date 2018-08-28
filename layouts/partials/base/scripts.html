@@ -11,8 +11,9 @@
   })();
 </script>
 {{ end }}
-
+{{ if isset .Site.Params "highlight" }}
 {{ with .Site.Params.highlight }}
 <script src="{{ "js/highlight.pack.js" | relURL }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
+{{end}}
