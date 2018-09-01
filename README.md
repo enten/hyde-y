@@ -101,8 +101,9 @@ disqusShortname = "your_disqus_shortname"
     # Default (if omitted) is "Home".
     home = "home"
 
-    # Select a syntax highight.
+    # Select a syntax highight for highlight.js
     # Check the static/css/highlight directory for options.
+    # Leave unset to fall back to default hugo highlighter instead of highlight.js
     highlight = "default"
 
     # Google Analytics.
