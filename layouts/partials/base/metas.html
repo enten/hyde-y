@@ -62,9 +62,11 @@
 </script>
 {{ end }}
 
-{{ if .RSSLink }}
+<!--
+if .RSSLink }}
 <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />
-{{ end }}
+end }}
+-->
 <link rel="canonical" href="{{ .Permalink }}" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "/touch-icon-144-precomposed.png" | absURL }}">
