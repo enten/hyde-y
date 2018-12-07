@@ -1,11 +1,11 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ $pag := .Paginator }}
 {{ if gt $pag.TotalPages 1 }}
-<a aria-label="First" href="{{ $baseurl }}{{ $pag.First.URL }}">
+<a aria-label="{{ .Site.Data.Strings.first }}" href="{{ $baseurl }}{{ $pag.First.URL }}">
   <span aria-hidden="true">««</span>
 </a>
 
-<a{{ if not $pag.HasPrev }} class="disabled"{{ end }} aria-label="Previous" href="{{ if $pag.HasPrev }}{{ $baseurl }}{{ $pag.Prev.URL }}{{ else }}#{{ end }}">
+<a{{ if not $pag.HasPrev }} class="disabled"{{ end }} aria-label="{{ .Site.Data.Strings.previous }}" href="{{ if $pag.HasPrev }}{{ $baseurl }}{{ $pag.Prev.URL }}{{ else }}#{{ end }}">
   <span aria-hidden="true">«</span>
 </a>
 
@@ -15,11 +15,11 @@
 </a>
 {{ end }}
 
-<a{{ if not $pag.HasNext }} class="disabled"{{ end }} aria-label="Next" href="{{ if $pag.HasNext }}{{ $baseurl }}{{ $pag.Next.URL }}{{ else }}#{{ end }}">
+<a{{ if not $pag.HasNext }} class="disabled"{{ end }} aria-label="{{ .Site.Data.Strings.next }}" href="{{ if $pag.HasNext }}{{ $baseurl }}{{ $pag.Next.URL }}{{ else }}#{{ end }}">
   <span aria-hidden="true">»</span>
 </a>
 
-<a aria-label="Last" href="{{ $baseurl }}{{ $pag.Last.URL }}">
+<a aria-label="{{ .Site.Data.Strings.last }}" href="{{ $baseurl }}{{ $pag.Last.URL }}">
   <span aria-hidden="true">»»</span>
 </a>
 {{ end }}
