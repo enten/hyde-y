@@ -1,4 +1,4 @@
-{{ if and (.Site.Params.rss) (.RSSLink) }}
-<a id="contact-link-rss" class="contact_link" href="{{ .RSSLink }}" type="application/rss+xml">
-  <span class="fa fa-rss-square"></span><span>rss</span></a>
+{{ if and ($.Site.Params.rss) (.RSSLink) }}
+<a id="contact-link-rss" class="contact_link" aria-label="{{ $.Site.Data.Strings.rss }}" href="{{ .RSSLink }}" type="application/rss+xml">
+  <span class="fa fa-rss-square"></span></a>
 {{ end }}

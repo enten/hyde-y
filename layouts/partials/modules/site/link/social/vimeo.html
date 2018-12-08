@@ -1,4 +1,4 @@
 {{ with .Site.Params.vimeo }}
-<a id="contact-link-vimeo" class="contact_link" href="https://vimeo.com/{{ . }}">
-  <span class="fa fa-vimeo-square"></span><span>vimeo</span></a>
+<a id="contact-link-vimeo" class="contact_link" aria-label="{{ $.Site.Data.Strings.vimeo }}" href="https://vimeo.com/{{ . }}">
+  <span class="fa fa-vimeo-square"></span></a>
 {{ end }}
