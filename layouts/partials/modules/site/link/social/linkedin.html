@@ -1,4 +1,4 @@
-{{ with .Site.Params.linkedin }}
-<a id="contact-link-linkedin" class="contact_link" href="https://www.linkedin.com/in/{{ . }}">
-  <span class="fa fa-linkedin-square"></span><span>linkedin</span></a>
+ {{ with .Site.Params.linkedin }}
+<a id="contact-link-linkedin" class="contact_link" aria-label="{{ $.Site.Data.Strings.linkedin }}" href="https://www.linkedin.com/in/{{ . }}">
+  <span class="fa fa-linkedin-square"></span></a>
 {{ end }}
