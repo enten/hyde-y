@@ -1,4 +1,4 @@
 {{ with .Site.Author.email }}
-<a id="contact-link-email" class="contact_link" aria-label="{{ $.Site.Data.Strings.email }}" href="mailto:{{ . }}">
+<a id="contact-link-email" class="contact_link" rel="me" aria-label="{{ $.Site.Data.Strings.email }}" href="mailto:{{ . }}">
   <span class="fa fa-envelope-square"></span></a>
 {{ end }}
