@@ -53,7 +53,7 @@
     "headline": "{{ .Title }}",
     "author": {
       "@type": "Person",
-      "name": "http://profiles.google.com/+{{ .Site.Params.googleplus }}?rel=author"
+      "name": "{{ .Site.Author.name }}"
     },
     "datePublished": "{{ .Date.Format "2006-01-02" }}",
     "description": "{{ .Description }}",
