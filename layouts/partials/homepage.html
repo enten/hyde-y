@@ -3,7 +3,7 @@
     {{ partial "bloc/content/h1-title" . }}
     {{ partial "bloc/content/lastupdate" . }}
   </header>
-  {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
   {{ range $paginator.Pages }}
     {{ .Render "summary" }}
   {{ end }}
