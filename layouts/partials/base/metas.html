@@ -62,8 +62,8 @@
 </script>
 {{ end }}
 
-{{ if .RSSLink }}
-<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />
+{{ with .OutputFormats.Get "RSS" }}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ . }}" />
 {{ end }}
 <link rel="canonical" href="{{ .Permalink }}" />
 
@@ -72,4 +72,4 @@
 {{ with .Site.Params.themecolor }}
 <meta name="theme-color" content="{{ . }}">
 {{ end }}
-{{ .Hugo.Generator }}
+{{ hugo.Generator }}
